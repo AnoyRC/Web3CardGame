@@ -1171,29 +1171,29 @@ var tempDouble;
 var tempI64;
 
 var ASM_CONSTS = {
- 3909848: function() {
+ 3909912: function() {
   Module["emscripten_get_now_backup"] = performance.now;
  },
- 3909903: function($0) {
+ 3909967: function($0) {
   performance.now = function() {
    return $0;
   };
  },
- 3909951: function($0) {
+ 3910015: function($0) {
   performance.now = function() {
    return $0;
   };
  },
- 3909999: function() {
+ 3910063: function() {
   performance.now = Module["emscripten_get_now_backup"];
  },
- 3910054: function() {
+ 3910118: function() {
   return Module.webglContextAttributes.premultipliedAlpha;
  },
- 3910115: function() {
+ 3910179: function() {
   return Module.webglContextAttributes.preserveDrawingBuffer;
  },
- 3910179: function() {
+ 3910243: function() {
   return Module.webglContextAttributes.powerPreference;
  }
 };
@@ -1295,6 +1295,10 @@ function stackTrace() {
  var js = jsStackTrace();
  if (Module["extraStackTrace"]) js += "\n" + Module["extraStackTrace"]();
  return demangleAll(js);
+}
+
+function _AlertMessage(str) {
+ window.alert(UTF8ToString(str));
 }
 
 var JS_Accelerometer = null;
@@ -13945,6 +13949,7 @@ function intArrayFromString(stringy, dontAddNull, length) {
 }
 
 var asmLibraryArg = {
+ "AlertMessage": _AlertMessage,
  "JS_Accelerometer_IsRunning": _JS_Accelerometer_IsRunning,
  "JS_Accelerometer_Start": _JS_Accelerometer_Start,
  "JS_Accelerometer_Stop": _JS_Accelerometer_Stop,
