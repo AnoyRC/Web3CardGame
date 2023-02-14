@@ -1,3 +1,6 @@
+# The Game is Live at :
+https://web3cardgame.vercel.app/
+
 # Game Mechanics :
 
 You will start the round with both receiving 1 card each, though opponents card will be hidden.
